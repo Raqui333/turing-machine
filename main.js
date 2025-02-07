@@ -81,19 +81,13 @@ const program = {
 };
 
 const tapes = [
-  ['B', 'A', 'B', 'A', 'B', 'A'],
-  ['A', 'B', 'B', 'A', 'B', 'B'],
-  ['A', 'B', 'A', 'A', 'B', 'A'],
-  ['B', 'A', 'B', 'A', 'A', 'B'],
+  ['B', 'A', 'B', 'A', 'B', 'A'], // accepted
+  ['A', 'B', 'B', 'A', 'B', 'B'], // rejected
+  ['A', 'B', 'A', 'A', 'B', 'A'], // rejected
+  ['B', 'A', 'B', 'A', 'A', 'B'], // loop
 ];
 
 tapes.forEach((tape) => {
   const Machine = new TuringMachine(tape, program);
-
-  // accepted
-  // rejected
-  // rejected
-  // loop
-
   console.log(Machine.run());
 });
